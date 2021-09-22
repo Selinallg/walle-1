@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply from: rootProject.file("mt_maven.gradle")
-apply from: rootProject.file('quality.gradle')
+//apply from: rootProject.file("mt_maven.gradle")
+//apply from: rootProject.file('quality.gradle')
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
