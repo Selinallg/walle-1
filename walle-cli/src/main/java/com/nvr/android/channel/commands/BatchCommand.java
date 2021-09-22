@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @Parameters(commandDescription = "channel apk batch production")
-public class BatchCommand implements IWalleCommand {
+public class BatchCommand implements IMalleCommand {
 
     @Parameter(required = true, description = "inputFile [outputDirectory]", arity = 2, converter = FileConverter.class)
     private List<File> files;

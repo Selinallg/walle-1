@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 @Parameters(commandDescription = "get channel info from apk and show all by default")
-public class ShowCommand implements IWalleCommand {
+public class ShowCommand implements IMalleCommand {
 
     @Parameter(required = true, description = "file1 file2 file3 ...", converter = FileConverter.class, variableArity = true)
     private List<File> files;

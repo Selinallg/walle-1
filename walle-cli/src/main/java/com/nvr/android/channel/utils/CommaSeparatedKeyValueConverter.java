@@ -5,10 +5,6 @@ import com.beust.jcommander.IStringConverter;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by chentong on 21/11/2016.
- */
-
 public class CommaSeparatedKeyValueConverter implements IStringConverter<Map<String, String>> {
     @Override
     public Map<String, String> convert(final String value) {

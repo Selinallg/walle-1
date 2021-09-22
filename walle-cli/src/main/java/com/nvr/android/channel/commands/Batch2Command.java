@@ -4,7 +4,7 @@ import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 import com.beust.jcommander.converters.FileConverter;
 import com.google.gson.Gson;
-import com.nvr.android.channel.WalleConfig;
+import com.nvr.android.channel.MalleConfig;
 import com.nvr.android.channel.utils.Util;
 import com.nvr.android.channel.ChannelWriter;
 import com.nvr.android.channel.SignatureNotFoundException;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Parameters(commandDescription = "channel apk batch production")
-public class Batch2Command implements IWalleCommand {
+public class Batch2Command implements IMalleCommand {
 
     @Parameter(required = true, description = "inputFile [outputDirectory]", arity = 2, converter = FileConverter.class)
     private List<File> files;
@@ -44,19 +44,19 @@ public class Batch2Command implements IWalleCommand {
 
         if (configFile != null) {
             try {
-                final WalleConfig         config           = new Gson().fromJson(new InputStreamReader(new FileInputStream(configFile), "UTF-8"), WalleConfig.class);
-                final Map<String, String> defaultExtraInfo = config.getDefaultExtraInfo();
-                final List<WalleConfig.ChannelInfo> channelInfoList = config.getChannelInfoList();
-                for (WalleConfig.ChannelInfo channelInfo : channelInfoList) {
+                final MalleConfig                   config           = new Gson().fromJson(new InputStreamReader(new FileInputStream(configFile), "UTF-8"), MalleConfig.class);
+                final Map<String, String>           defaultExtraInfo = config.getDefaultExtraInfo();
+                final List<MalleConfig.ChannelInfo> channelInfoList  = config.getChannelInfoList();
+                for (MalleConfig.ChannelInfo channelInfo : channelInfoList) {
                     Map<String, String> extraInfo = channelInfo.getExtraInfo();
                     if (!channelInfo.isExcludeDefaultExtraInfo()) {
                         switch (config.getDefaultExtraInfoStrategy()) {
-                            case WalleConfig.STRATEGY_IF_NONE:
+                            case MalleConfig.STRATEGY_IF_NONE:
                                 if (extraInfo == null) {
                                     extraInfo = defaultExtraInfo;
                                 }
                                 break;
-                            case WalleConfig.STRATEGY_ALWAYS:
+                            case MalleConfig.STRATEGY_ALWAYS:
                                 final Map<String, String> temp = new HashMap<>();
                                 if (defaultExtraInfo != null) {
                                     temp.putAll(defaultExtraInfo);

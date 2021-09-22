@@ -3,7 +3,7 @@ package com.nvr.android.channel;
 import java.util.List;
 import java.util.Map;
 
-public class WalleConfig {
+public class MalleConfig {
 
     /**
      * strategy:

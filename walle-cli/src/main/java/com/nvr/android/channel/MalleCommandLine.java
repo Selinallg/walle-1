@@ -12,7 +12,7 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
 
-public class WalleCommandLine {
+public class MalleCommandLine {
     @Parameter(names = {"-v", "--version"}, description = "show walle version")
     private boolean showVersion;
 

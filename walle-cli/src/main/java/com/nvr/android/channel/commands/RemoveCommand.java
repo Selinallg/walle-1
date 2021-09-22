@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @Parameters(commandDescription = "remove channel info for apk")
-public class RemoveCommand implements IWalleCommand {
+public class RemoveCommand implements IMalleCommand {
 
     @Parameter(required = true, description = "file1 file2 file3 ...", converter = FileConverter.class, variableArity = true)
     private List<File> files;
