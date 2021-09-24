@@ -13,10 +13,10 @@ import java.util.jar.Manifest;
 
 
 public class MalleCommandLine {
-    @Parameter(names = {"-v", "--version"}, description = "show walle version")
+    @Parameter(names = {"-v", "--version"}, description = "show channel-tools version")
     private boolean showVersion;
 
-    @Parameter(names = {"-h", "--help"}, description = "show walle command line help")
+    @Parameter(names = {"-h", "--help"}, description = "show gsxr command line help")
     private boolean showHelp;
 
     public void parse(final JCommander commander) {
@@ -39,7 +39,7 @@ public class MalleCommandLine {
                     if (is != null) {
                         final Manifest manifest = new Manifest(is);
                         final Attributes mainAttribs = manifest.getMainAttributes();
-                        final String version = mainAttribs.getValue("Walle-Version");
+                        final String version = mainAttribs.getValue("Tools-Version");
                         if (version != null) {
                             return version;
                         }

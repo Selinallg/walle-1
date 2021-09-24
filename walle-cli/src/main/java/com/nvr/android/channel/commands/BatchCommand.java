@@ -27,7 +27,7 @@ public class BatchCommand implements IMalleCommand {
     @Parameter(names = {"-e", "--extraInfo"}, converter = CommaSeparatedKeyValueConverter.class, description = "Comma-separated list of key=value info, eg: -e time=1,type=android")
     private Map<String, String> extraInfo;
 
-    @Parameter(names = {"-c", "--channelList"}, description = "Comma-separated list of channel, eg: -c meituan,xiaomi")
+    @Parameter(names = {"-c", "--channelList"}, description = "Comma-separated list of channel, eg: -c nolo,migu")
     private List<String> channelList;
 
     @Parameter(names = {"-f", "--channelFile"}, description = "channel file")

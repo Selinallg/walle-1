@@ -24,7 +24,7 @@ public class PutCommand implements IMalleCommand {
     @Parameter(names = {"-e", "--extraInfo"}, converter = CommaSeparatedKeyValueConverter.class, description = "Comma-separated list of key=value info, eg: -e time=1,type=android")
     private Map<String, String> extraInfo;
 
-    @Parameter(names = {"-c", "--channel"}, description = "single channel, eg: -c meituan")
+    @Parameter(names = {"-c", "--channel"}, description = "single channel, eg: -c nolo")
     private String channel;
 
     @Override
