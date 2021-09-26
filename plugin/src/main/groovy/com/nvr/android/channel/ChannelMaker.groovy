@@ -1,4 +1,4 @@
-package com.meituan.android.walle
+package com.nvr.android.channel
 
 import com.android.apksigner.core.ApkVerifier
 import com.android.apksigner.core.internal.util.ByteBufferDataSource

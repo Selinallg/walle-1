@@ -1,4 +1,4 @@
-package com.meituan.android.walle
+package com.nvr.android.channel
 
 import org.gradle.api.Project
 

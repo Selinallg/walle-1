@@ -45,6 +45,9 @@ android {
             keyAlias "debug"
             keyPassword "12345678"
         }
+
+        v1SigningEnabled true
+        v2SigningEnabled true
     }
 
     buildTypes {

@@ -1,4 +1,4 @@
-package com.meituan.android.walle
+package com.nvr.android.channel
 
 import com.android.build.gradle.api.BaseVariant
 import com.android.builder.model.SigningConfig

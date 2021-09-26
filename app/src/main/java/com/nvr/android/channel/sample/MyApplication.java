@@ -1,5 +1,5 @@
 
-package com.meituan.android.walle.sample;
+package com.nvr.android.channel.sample;
 
 import android.app.Application;
 

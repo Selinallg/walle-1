@@ -1,4 +1,4 @@
-package com.meituan.android.walle;
+package com.nvr.android.channel;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
