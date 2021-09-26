@@ -1,7 +1,5 @@
 package gsxr.nvr.android.channel;
 
-import com.nvr.android.channel.ApkUtil;
-
 import java.io.DataOutput;
 import java.io.IOException;
 import java.nio.ByteBuffer;

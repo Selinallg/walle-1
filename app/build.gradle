@@ -1,4 +1,3 @@
-import com.android.build.gradle.api.BaseVariant
 
 apply plugin: 'com.android.application'
 apply plugin: 'walle'
@@ -39,15 +38,19 @@ android {
     }
 
     signingConfigs {
-        sign {
-            storeFile file("keystore/sign-debug.keystore")
-            storePassword "1234567"
-            keyAlias "debug"
-            keyPassword "12345678"
+        release {
+            storeFile file("./keystore/nolo_demo.jks")
+            storePassword "best6dof"
+            keyAlias "nolo_demo"
+            keyPassword "best6dof"
         }
 
-        v1SigningEnabled true
-        v2SigningEnabled true
+        debug {
+            storeFile file("./keystore/nolo_demo.jks")
+            storePassword "best6dof"
+            keyAlias "nolo_demo"
+            keyPassword "best6dof"
+        }
     }
 
     buildTypes {
@@ -55,14 +58,14 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.sign
+            signingConfig signingConfigs.release
         }
 
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            signingConfig signingConfigs.sign
+            signingConfig signingConfigs.release
 
             applicationIdSuffix 'debug'
         }
@@ -102,13 +105,13 @@ walle {
 
 
 // 根据不同的applicationId来配置不同的channelFile／configFile
-afterEvaluate {
-    project.android.applicationVariants.all { BaseVariant variant ->
-        variant.assemble.doFirst {
-            if (variant.applicationId.endsWith(".debug")) {
-
-                project.walle.channelFile = new File("${project.getProjectDir()}/channel_debug")
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    project.android.applicationVariants.all { BaseVariant variant ->
+//        variant.assemble.doFirst {
+//            if (variant.applicationId.endsWith(".debug")) {
+//
+//                project.walle.channelFile = new File("${project.getProjectDir()}/channel_debug")
+//            }
+//        }
+//    }
+//}

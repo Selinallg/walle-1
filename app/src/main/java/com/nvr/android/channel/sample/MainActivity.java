@@ -6,8 +6,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nvr.android.channel.ChannelInfo;
-import com.nvr.android.channel.WalleChannelReader;
+import gsxr.nvr.android.channel.ChannelInfo;
+import gsxr.nvr.android.channel.GSXRChannelReader;
+
 import com.meituan.android.walle.sample.R;
 
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private void readChannel() {
         final TextView tv = (TextView) findViewById(R.id.tv_channel);
         final long        startTime   = System.currentTimeMillis();
-        final ChannelInfo channelInfo = WalleChannelReader.getChannelInfo(this.getApplicationContext());
+        final ChannelInfo channelInfo = GSXRChannelReader.getChannelInfo(this.getApplicationContext());
         if (channelInfo != null) {
             tv.setText(channelInfo.getChannel() + "\n" + channelInfo.getExtraInfo());
         }

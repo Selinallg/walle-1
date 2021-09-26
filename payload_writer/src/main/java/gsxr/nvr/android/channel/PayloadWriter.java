@@ -1,7 +1,5 @@
 package gsxr.nvr.android.channel;
 
-import com.nvr.android.channel.ApkUtil;
-import com.nvr.android.channel.Pair;
 
 import java.io.File;
 import java.io.FileInputStream;
